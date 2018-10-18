@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import {BasketPageComponent} from './basket-page/basket-page.component';
+
+const routes: Routes = [
+  {
+    path: 'catalog',
+    component: BasketPageComponent,
+    outlet: 'basket'
+  }
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
