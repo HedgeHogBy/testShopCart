@@ -1,4 +1,6 @@
-<div *ngIf="products" class="row">
+<div *ngIf="products; else loading"
+     class="row"
+>
   <app-catalog-item
     class="col-sm"
     *ngFor="let product of products; trackBy: trackByFn"
@@ -7,3 +9,9 @@
   >
   </app-catalog-item>
 </div>
+
+<ng-template #loading>
+  <div class="row">
+    <div class="catalog-loading"></div>
+  </div>
+</ng-template>
