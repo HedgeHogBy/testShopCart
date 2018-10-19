@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import {BasketPageComponent} from './basket-page/basket-page.component';
+import { BasketPageComponent } from './basket-page/basket-page.component';
 
 const routes: Routes = [
   {
-    path: 'catalog',
+    path: 'basket',
     component: BasketPageComponent,
-    outlet: 'basket'
+    outlet: 'order'
   }
 ];
 

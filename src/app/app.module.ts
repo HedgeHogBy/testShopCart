@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
-import {NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppConfigModule } from './app-config.module';
 import { CatalogModule } from './catalog/catalog.module';
@@ -20,7 +18,6 @@ import { AppComponent } from './app.component';
     BrowserModule,
     HttpClientModule,
     AppConfigModule,
-    NgbPaginationModule,
     CatalogModule,
     BasketModule,
     SharedModule,

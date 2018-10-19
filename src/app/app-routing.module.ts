@@ -4,13 +4,12 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'catalog',
+    redirectTo: '/catalog(order:basket)',
     pathMatch: 'full'
   },
-
   {
     path: '**',
-    redirectTo: 'catalog',
+    redirectTo: '/catalog(order:basket)',
     pathMatch: 'full'
   }
 ];

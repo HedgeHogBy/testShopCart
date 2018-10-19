@@ -1,3 +1,9 @@
-<p>
-  catalog-grid works!
-</p>
+<div *ngIf="products" class="row">
+  <app-catalog-item
+    class="col-sm"
+    *ngFor="let product of products; trackBy: trackByFn"
+    [product]="product"
+    (buy)="onBuy($event)"
+  >
+  </app-catalog-item>
+</div>

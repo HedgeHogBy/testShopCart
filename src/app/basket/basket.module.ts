@@ -12,6 +12,7 @@ import { BasketPageComponent } from './basket-page/basket-page.component';
     CommonModule,
     BasketRoutingModule
   ],
-  declarations: [BasketItemComponent, BasketListComponent, OrderTotalComponent, BasketPageComponent]
+  declarations: [BasketItemComponent, BasketListComponent, OrderTotalComponent, BasketPageComponent],
+  exports: [BasketPageComponent]
 })
 export class BasketModule { }

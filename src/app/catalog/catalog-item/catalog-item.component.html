@@ -1,3 +1,9 @@
-<p>
-  catalog-item works!
-</p>
+<div
+  *ngIf="product"
+  class="text-center mb-2"
+>
+  <img class="img-fluid" src="{{product.image}}" alt=""/>
+  <div>{{product.productName}}</div>
+  <div>{{product.productPrice | currency}}</div>
+  <button class="btn bg-success" (click)="onBuy()">Buy</button>
+</div>
