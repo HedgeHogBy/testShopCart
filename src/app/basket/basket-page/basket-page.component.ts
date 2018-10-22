@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+
+import {APP_CONFIG, AppConfig} from '../../app-config.module';
 
 @Component({
   selector: 'app-basket-page',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./basket-page.component.scss']
 })
 export class BasketPageComponent implements OnInit {
+  gst: number;
 
-  constructor() { }
+  constructor(
+    @Inject(APP_CONFIG) private config: AppConfig
+  ) {}
 
   ngOnInit() {
+    this.gst = this.config.gst;
   }
 
 }

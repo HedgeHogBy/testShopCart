@@ -13,8 +13,6 @@ const DEFAULT_IMG = 'https://via.placeholder.com/600/92c952';
   providedIn: 'root'
 })
 export class ProductsService {
-  catalogItems: Product[];
-
   static createProduct(product): Product {
     return {
       productId: product.productId,

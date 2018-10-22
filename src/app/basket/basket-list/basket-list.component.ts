@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import Product from '../../interface/product.interface';
+
 @Component({
   selector: 'app-basket-list',
   templateUrl: './basket-list.component.html',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasketListComponent implements OnInit {
 
+  orderedProducts: Product[] = [];
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  trackByFn(index, product) {
+     return product.productId;
   }
 
 }

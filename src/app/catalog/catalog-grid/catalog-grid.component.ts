@@ -1,39 +1,40 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import {Component, OnChanges, Input, SimpleChanges} from '@angular/core';
 
 import Product from '../../interface/product.interface';
-import { ProductsService } from '../products.service';
-import {APP_CONFIG, AppConfig} from '../../app-config.module';
+
 
 @Component({
   selector: 'app-catalog-grid',
   templateUrl: './catalog-grid.component.html',
   styleUrls: ['./catalog-grid.component.scss']
 })
-export class CatalogGridComponent implements OnInit {
-  products: Product[];
+export class CatalogGridComponent implements OnChanges {
+  @Input() products: Product[];
+  @Input() gridSize: number;
+
   visibleProducts: Product[];
   page = 1;
-  size;
 
-  constructor(
-    private productsService: ProductsService,
-    @Inject(APP_CONFIG) private config: AppConfig
-  ) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.size = this.config.gridSize;
-
-    this.productsService.getProducts().subscribe(products => {
-      this.products = products;
-    });
+  ngOnChanges(changes: SimpleChanges) {
+    if (!this.visibleProducts && this.products && this.products.length) {
+      this.setProductsOnPage(this.page);
+    }
   }
 
   trackByFn(index, product) {
      return product.productId;
   }
 
-  onBuy(product: Product): void {
+  setProductsOnPage(page: number): void {
+    const offsetStart: number = (page - 1) * this.gridSize;
+    const offsetEnd: number = this.gridSize * page;
 
+    this.visibleProducts = this.products.slice(offsetStart, offsetEnd);
   }
 
+  onBuy(product: Product): void {
+    console.log(product);
+  }
 }

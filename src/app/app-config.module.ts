@@ -5,13 +5,13 @@ export let APP_CONFIG = new InjectionToken<AppConfig>('app.config');
 export class AppConfig {
   gst: number;
   catalogApiUrl: string;
-  gridSize: number;
+  productsOnPage: number;
 }
 
 export const APP_DI_CONFIG: AppConfig = {
   gst: 0.05,
   catalogApiUrl: 'https://api.myjson.com/bins/1g2o7w',
-  gridSize: 6
+  productsOnPage: 6
 };
 
 @NgModule({

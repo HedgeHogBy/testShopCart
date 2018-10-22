@@ -1,2 +1,13 @@
-<app-basket-list></app-basket-list>
-<app-order-total></app-order-total>
+<div class="basket-page container">
+  <div class="row">
+    <app-basket-list
+      class="col col-12 col-md-8 col-lg-8"
+    >
+    </app-basket-list>
+    <app-order-total
+      class="col col-12 col-md-4 col-lg-4"
+      [gst]="gst"
+    >
+    </app-order-total>
+  </div>
+</div>

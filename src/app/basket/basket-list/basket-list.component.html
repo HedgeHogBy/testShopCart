@@ -1,3 +1,17 @@
-<p>
-  basket-list works!
-</p>
+<h3>My Bag</h3>
+
+<div *ngIf="orderedProducts.length; else empty">
+  <div>
+    <app-basket-item
+      class=""
+      *ngFor="let product of orderedProducts; trackBy: trackByFn"
+    >
+    </app-basket-item>
+  </div>
+</div>
+
+<ng-template #empty>
+  <div>
+    Bag is empty
+  </div>
+</ng-template>
