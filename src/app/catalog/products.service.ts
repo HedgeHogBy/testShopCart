@@ -20,7 +20,7 @@ export class ProductsService {
       image: product.thumbnails.b2 || product.thumbnails.b3 || product.thumbnails.b4 || DEFAULT_IMG,
       productColor: product.productColor,
       productPrice: product.productPrice,
-      quantity: product.quantity
+      quantity: 1
     };
   }
 

@@ -1,3 +1,37 @@
-<p>
-  basket-item works!
-</p>
+<div
+  *ngIf="product"
+  class="row pb-3"
+>
+  <div class="col-3">
+      <img
+        class="img-fluid"
+        src="{{product.image}}"
+        alt="{{product.productName}}"
+      />
+    </div>
+    <div class="col-6">
+      <div>
+        <b>
+          {{product.productName}}
+        </b>
+      </div>
+      <div>
+        Color: {{product.productColor}}
+      </div>
+      <div>
+        <b>
+          QTY: {{product.quantity}}
+        </b>
+      </div>
+    </div>
+    <div class="col-3">
+      <div>
+        <b>
+          {{product.productPrice | currency}}
+        </b>
+      </div>
+      <div>
+        <button class="btn btn-success" (click)="onRemove()">Remove</button>
+      </div>
+    </div>
+</div>

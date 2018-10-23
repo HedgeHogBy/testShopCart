@@ -7,6 +7,9 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class OrderTotalComponent implements OnInit {
   @Input() gst: number;
+  @Input() total: number;
+  @Input() subTotal: number;
+  @Input() taxes: number;
 
   constructor() { }
 

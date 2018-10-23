@@ -1,11 +1,14 @@
-<div class="order">
-  <h3>
-    Order total
-  </h3>
-  <div>
-    Subtotal:
+<div class="order container bg-light font-weight-bold">
+  <h4 class="row text-uppercase border-bottom border-dark py-2">
+    <span class="col-8">Order total:</span>
+    <span class="col-4">{{total | currency}}</span>
+  </h4>
+  <div class="row ">
+    <span class="col-9">Subtotal:</span>
+    <span class="col-3">{{subTotal | currency}}</span>
   </div>
-  <div>
-    GST ({{ gst * 100 }}%):
+  <div class="row">
+    <span class="col-9">GST ({{ gst * 100 }}%):</span>
+    <span class="col-3">{{taxes | currency}}</span>
   </div>
 </div>

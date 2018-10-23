@@ -4,7 +4,7 @@ describe('CoreModule', () => {
   let sharedModule: CoreModule;
 
   beforeEach(() => {
-    sharedModule = new CoreModule();
+    sharedModule = new CoreModule('');
   });
 
   it('should create an instance', () => {

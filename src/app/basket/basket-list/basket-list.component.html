@@ -1,17 +1,20 @@
-<h3>My Bag</h3>
+<div class="bg-light">
+  <h4 class="border-bottom font-weight-bold text-capitalize border-dark py-2">My Bag</h4>
 
-<div *ngIf="orderedProducts.length; else empty">
-  <div>
-    <app-basket-item
-      class=""
-      *ngFor="let product of orderedProducts; trackBy: trackByFn"
-    >
-    </app-basket-item>
+  <div *ngIf="orderedProducts && orderedProducts.length; else empty">
+    <div>
+      <app-basket-item
+        class=""
+        *ngFor="let product of orderedProducts; trackBy: trackByFn"
+        [product]="product"
+      >
+      </app-basket-item>
+    </div>
   </div>
+
+  <ng-template #empty>
+    <div>
+      Bag is empty
+    </div>
+  </ng-template>
 </div>
-
-<ng-template #empty>
-  <div>
-    Bag is empty
-  </div>
-</ng-template>

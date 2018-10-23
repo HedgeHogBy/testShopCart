@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+
+import Product from '../../interface/product.interface';
+import {ShoppingCartService} from '../../core/shopping-cart.service';
 
 @Component({
   selector: 'app-basket-item',
@@ -6,10 +9,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./basket-item.component.scss']
 })
 export class BasketItemComponent implements OnInit {
+  @Input() product: Product;
 
-  constructor() { }
+  constructor(
+    private shoppingCartService: ShoppingCartService,
+  ) {}
 
   ngOnInit() {
   }
 
+  onRemove() {
+    this.shoppingCartService.removeItem(this.product);
+  }
 }

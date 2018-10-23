@@ -33,8 +33,4 @@ export class CatalogGridComponent implements OnChanges {
 
     this.visibleProducts = this.products.slice(offsetStart, offsetEnd);
   }
-
-  onBuy(product: Product): void {
-    console.log(product);
-  }
 }

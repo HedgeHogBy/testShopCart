@@ -2,11 +2,15 @@
   <div class="row">
     <app-basket-list
       class="col col-12 col-md-8 col-lg-8"
+      [orderedProducts]=products
     >
     </app-basket-list>
     <app-order-total
       class="col col-12 col-md-4 col-lg-4"
       [gst]="gst"
+      [total]="order.total"
+      [subTotal]="order.subTotal"
+      [taxes]="order.taxes"
     >
     </app-order-total>
   </div>

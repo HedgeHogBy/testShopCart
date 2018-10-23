@@ -4,6 +4,6 @@ export default interface Product {
   image: string;
   productColor: string;
   productPrice: number;
-  quantity: number;
+  quantity?: number;
 }
 

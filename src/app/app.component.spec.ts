@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'testShopCart'`, () => {
+  it(`should have as title 'Shopping Cart'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('testShopCart');
+    expect(app.title).toEqual('Shopping Cart');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to testShopCart!');
+    expect(compiled.querySelector('h1').textContent).toContain('Shopping Cart');
   });
 });
