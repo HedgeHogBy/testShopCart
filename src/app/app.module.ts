@@ -1,12 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppConfigModule } from './app-config.module';
 import { CatalogModule } from './catalog/catalog.module';
 import { BasketModule } from './basket/basket.module';
-import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 import { AppComponent } from './app.component';
 
 
@@ -16,11 +15,10 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     AppConfigModule,
+    CoreModule,
     CatalogModule,
     BasketModule,
-    SharedModule,
     AppRoutingModule
   ],
   providers: [],

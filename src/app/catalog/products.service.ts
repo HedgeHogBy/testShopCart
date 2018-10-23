@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of} from 'rxjs';
-import { pluck, retry, catchError, map, filter, switchMap } from 'rxjs/operators';
+import { pluck, retry, catchError, map } from 'rxjs/operators';
 
 import { APP_CONFIG, AppConfig } from '../app-config.module';
 import Product from '../interface/product.interface';
